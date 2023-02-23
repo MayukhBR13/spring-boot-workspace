@@ -27,9 +27,9 @@ public class BookController {
 	public ResponseEntity<List<Book>> getBooks() {
 		//Book book=new Book(12500,"Java Spring boot","ABC");
 		List<Book> list= bookService.getAllBooks();
-		if(list.size()<=0) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
+//		if(list.size()<=0) {
+//			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+//		}
 		return ResponseEntity.status(HttpStatus.CREATED).body(list);
 	}
 

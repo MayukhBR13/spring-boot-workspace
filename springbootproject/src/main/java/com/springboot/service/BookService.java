@@ -33,7 +33,7 @@ public class BookService {
 //		return books.stream().filter(e->e.getId()==id).findFirst().get();
 		Book book=null;
 		try {
-			book=(Book)this.bookRepository.findById(id);
+			book=(Book)this.bookRepository.findById(id).get();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -60,7 +60,7 @@ public class BookService {
 		bookRepository.save(bk);
 	}
 	
-	public Boolean deleteBook(int id) {
+	public void deleteBook(int id) {
 //		return books.removeIf(e->e.getId()==id);
 		this.bookRepository.deleteById(id);
 	}
